@@ -36,5 +36,14 @@ describe('<Controls />', () => {
         const button = getByText(/lock gate/i);
     })
 
+    // it('close gate becomes open gate when clicked',() => {
+    //     const {getByText} = render(<Controls/>)
+    
+    //     const button = getByText(/close gate/i);
+    //     fireEvent.click(button)
+        
+    //      getByText('Open Gate');
+        
+    // })
 
 })
