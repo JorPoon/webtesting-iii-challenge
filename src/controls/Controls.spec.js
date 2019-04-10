@@ -9,10 +9,10 @@ import 'react-testing-library/cleanup-after-each';
 import Controls from './Controls';
 
 describe('<Controls />', () => {
-    // it.skip('matches snapshot', () => {
-    //     const tree = renderer.create(<Controls/>).toJSON();
-    //     expect(tree).toMatchSnapShot();
-    // })
+    it.skip('matches snapshot', () => {
+        const tree = renderer.create(<Controls/>).toJSON();
+        expect(tree).toMatchSnapShot();
+    })
 
     it('renders without crashing', () => {
         const div = document.createElement('div');
@@ -23,4 +23,18 @@ describe('<Controls />', () => {
     it('renders successfully', () => {
         render(<Controls/>)
     })
+
+    it('has a button for close gate', () => {
+        const {getByText} = render(<Controls/>)
+        
+        const button = getByText(/close gate/i);
+    })
+
+    it('has a button for lock gate', () => {
+        const {getByText} = render(<Controls/>)
+        
+        const button = getByText(/lock gate/i);
+    })
+
+
 })
