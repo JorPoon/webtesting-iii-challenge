@@ -36,13 +36,34 @@ describe('<Display />', () => {
         const div = getByText(/unlocked/i)
     })
 
-    it('renders Closed when closed button is click', () => {
+    it('renders Closed and open gate button when closed button is click', () => {
         const {getByText} = render(<Dashboard/>)
         const div = getByText(/Open/i)
         const button = getByText(/close gate/i)
 
         fireEvent.click(button)
         getByText(/Closed/i);
+        getByText(/Open gate/i);
+    })
+
+    it('renders Closed and open gate button when closed button is click', () => {
+        const {getByText} = render(<Dashboard/>)
+        const div = getByText(/Open/i)
+        const button = getByText(/close gate/i)
+
+        fireEvent.click(button)
+        getByText(/Closed/i);
+        getByText(/Open gate/i);
+    })
+
+    it('renders Locked and unlock gate button when lock button is click', () => {
+        const {getByText} = render(<Dashboard/>)
+        const div = getByText(/unlocked/i)
+        const button = getByText(/lock gate/i)
+
+        fireEvent.click(button)
+        getByText(/locked/i);
+        getByText(/unlock/i);
     })
 
 
